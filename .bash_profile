@@ -6,7 +6,7 @@
 #
 
 # Nicer prompt.
-export PS1="\[\e[0;32m\] \[\e[1;32m\]\t \[\e[0;2m\]\w \[\e[0m\]\$ "
+export PS1='\[\033[01;32m\]\[\033[0m\033[0;32m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)$ '
 
 # Use colors.
 export CLICOLOR=1
@@ -34,6 +34,7 @@ function pretty() {
 }
 
 # Git aliases.
+alias git=git-together
 alias gs='git status'
 alias gc='git commit'
 alias gp='git pull --rebase'
