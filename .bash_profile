@@ -75,10 +75,6 @@ if [ -x "$(command -v kubectl)" ]; then
   source <(kubectl completion bash)
 fi
 
-# Use brew-installed PHP binaries.
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-
 # Use nvm.
 # export NVM_DIR="$HOME/.nvm"
 # . "$brew_prefix/opt/nvm/nvm.sh"
@@ -89,13 +85,7 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 # fi
 
 # Python settings.
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
-
-# Super useful Docker container oneshots.
-# Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
-dockrun() {
-  docker run -it geerlingguy/docker-"${1:-ubuntu1604}"-ansible /bin/bash
-}
+#export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 
 # Enter a running Docker container.
 function denter() {
@@ -159,6 +149,3 @@ function blt() {
     return 1
   fi
 }
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
