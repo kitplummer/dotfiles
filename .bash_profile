@@ -34,6 +34,7 @@ function pretty() {
 }
 
 # Git aliases.
+alias ll=ls -al
 alias git=git-together
 alias gs='git status'
 alias gc='git commit'
